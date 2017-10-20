@@ -59,20 +59,26 @@ body {
 }
 
 .card {
-  /* display: flex; */
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
   width: 100%;
   height: auto;
+  min-height: 300px;
   /* border: 1px solid white; */
   padding: 0;
   margin: 0;
   color: white;
-  
+  text-decoration: none;
+  background-size: cover;
+  background-position: center;
 }
 
-.card img {
-  width: 100%;
-  height: auto;
+.words {
+  background-color: rgba(0, 0, 0, 0.5);
 }
+
+
 
 /* Footer */
 

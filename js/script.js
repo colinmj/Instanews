@@ -3,8 +3,9 @@ $(document).ready(function(){
 
   $('#select-article').on('change', function(){
     
-    var selectedArticles =  $(this).val();
-    console.log(selectedArticles);
+    var selectedArticles =  $(this).val(); // Accesses what is selected from dropdown menu
+    
+   
 
 
     var url = 'https://api.nytimes.com/svc/topstories/v2/' + selectedArticles + '.json';
@@ -16,33 +17,37 @@ $(document).ready(function(){
       url: url,
       method: 'GET',
     }).done(function(data) {
-      for(var x = 0; x < 12; x++){
-        var title = data.results[x].abstract;
-        var photo = data.results[x].multimedia[3].url;
-        var storyUrl = data.results[x].url;
-        // $('.stories').append('<li class="card">' + title + '</li>');
-        $('.stories').append('<a class="card">' + title + '<img src="' + photo + '"/>' + '</a>');
-    }
+      // var result = data.results;
+      $('.stories').empty();
 
-    // $('.stories').append('<a class="card">' + title + '<img src="' + photo + '"/>' + '</a>');
-      
     
-      // console.log(data);
-      
-    }).fail(function(err) {
+      $.each(data.results.filter(function(item){
+        return item.multimedia.length !== 0 }).splice(0, 12),
+        function(key, value){
+          
+        var title = value.abstract;
+        var photo = value.multimedia[4].url;
+        var storyUrl = value.url;
+
+        $('.stories').append('<a href="' + storyUrl + '" class="card" style="background-image: url(' + photo + ');">' + '<div class="words">' + title + '</div  </a>');
+           
+        
+        
+      });
+
+    
+        
+        
+
+  }).fail(function(err) {
       throw err;
     });
 
-
-
-
-
   });
 
-
-
-
 });
+
+
 
 
 // var section = [
@@ -72,7 +77,3 @@ $(document).ready(function(){
 //   'obituaries',
 //   'insider'
 // ];
-
-
-
-
