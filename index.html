@@ -5,10 +5,10 @@
     <title>Instanews</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
     <link href="build/css/style.min.css" rel="stylesheet" type="text/css"/>
-    <script
-    src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="lib/selectric.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="lib/jquery.selectric.js"></script>
+    
   </head>
 
   <body>
@@ -18,15 +18,17 @@
     <div class="logo">
       <img src="assets/images/nyt-logo.svg" alt="New York Times Logo"/>
        <div class="choose">
-          <p>Choose a section</p>
+          <p>Choose a section:</p>
             <select id="select-article" class="options" name="sections" text="sections">
+              <option value="sections">Sections...</option>
               <option value="home">Home</option>
               <option value="arts">Arts</option>
-              <option value="realestate">Realestate</option>
+              <option value="realestate">Real Estate</option>
               <option value="insider">Insider</option>
               <option value="travel">Travel</option>
               <option value="food">Food</option>
               <option value="fashion">Fashion</option>
+              <option value="chicken">Chicken</option>
             </select>
           </div>
        </div>
@@ -44,16 +46,10 @@
     <!-- Footer -->
 
     <footer class="foot">
-      <p>Copyright 2016 <span class="caps">Instanews</span></p>
+      <p>&copy;Copyright 2016 <span class="caps">Instanews</span></p>
     </footer>
 
     <script src="build/js/script.min.js"></script>
 
    </body>
-
-
-
-
-
-
 </html>

@@ -61,6 +61,9 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -99,7 +102,8 @@ body {
     font-size: 12px; }
     @media all and (min-width: 600px) {
       .logo p {
-        width: 150px; } }
+        width: 150px;
+        font-size: 16px; } }
   @media all and (min-width: 600px) {
     .logo img {
       height: 180px;
@@ -118,71 +122,78 @@ body {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
-            flex-direction: column; }
+            flex-direction: column;
+    padding-bottom: 0;
+    width: 130px; }
     @media all and (min-width: 600px) {
       .logo .choose {
-        padding-right: 100px;
-        padding-bottom: 45px; } }
+        width: 165px; } }
     @media all and (min-width: 1000px) {
       .logo .choose {
         padding-left: 40px;
-        padding-bottom: 50px; } }
+        padding-bottom: 50px;
+        width: 190px; } }
   .logo .options {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 110px;
+    width: 50px;
+    height: 25px;
+    padding-bottom: 20px;
     -ms-flex-item-align: center;
-        align-self: center; }
+        align-self: center;
+    font-size: 16px; }
 
 .smaller {
-  max-height: 250px;
+  height: auto;
   margin: 0;
-  padding: 0 0 100px 0; }
+  padding: 0 0 20px 0; }
   @media all and (min-width: 600px) {
     .smaller {
-      max-height: 130px;
-      margin: 0;
-      padding: 0 0 40px 80px;
+      padding: 0 0 0 80px;
       -webkit-box-pack: start;
           -ms-flex-pack: start;
               justify-content: flex-start; } }
   @media all and (min-width: 1000px) {
     .smaller {
-      max-height: 120px;
+      height: auto;
       padding: 0;
       margin: 0; } }
   .smaller img {
     -ms-flex-item-align: center;
         align-self: center;
-    width: 200px;
-    height: 200px;
-    padding-bottom: 20px;
-    padding-top: 35px; }
+    width: 180px;
+    height: 180px;
+    padding-bottom: 0px;
+    padding-top: 20px; }
     @media all and (min-width: 600px) {
       .smaller img {
         height: 120px;
         width: 120px;
         padding-right: 40px;
-        margin-top: 16px; } }
+        margin-bottom: 12px; } }
     @media all and (min-width: 1000px) {
       .smaller img {
-        height: 120px;
-        width: 120px;
-        margin-bottom: 40px;
-        margin-left: 20px; } }
-  @media all and (min-width: 600px) {
-    .smaller .choose {
-      padding-top: 50px; } }
-  @media all and (min-width: 1000px) {
-    .smaller .choose {
-      margin-bottom: 40px;
-      padding-left: 20px; } }
+        height: 110px;
+        width: 110px;
+        margin-left: 30px;
+        margin-bottom: 20px; } }
+  .smaller .choose {
+    padding-top: 0;
+    margin-top: 0;
+    padding-bottom: 20px; }
+    @media all and (min-width: 600px) {
+      .smaller .choose {
+        padding: 0 0 20px 0; } }
+    @media all and (min-width: 1000px) {
+      .smaller .choose {
+        padding-left: 20px;
+        padding-bottom: 30px; } }
   .smaller .options {
-    height: 70px; }
+    height: 25px; }
     @media all and (min-width: 600px) {
       .smaller .options {
-        height: 20px; } }
+        padding-bottom: 20px; } }
 
 /* Loading Gif */
 .loading {
@@ -255,13 +266,14 @@ body {
     .stories .card .card :first-of-type {
       padding-top: 5px; }
   .stories .words {
-    background-color: rgba(0, 0, 0, 0.5); }
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: hidden; }
 
 .foot {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  color: white;
+  color: #c2c2c2;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -276,7 +288,8 @@ body {
       margin-top: 200px; } }
   @media all and (min-width: 1000px) {
     .foot {
-      text-align: left; } }
+      text-align: left;
+      padding-left: 20px; } }
   .foot .caps {
     text-transform: uppercase; }
 

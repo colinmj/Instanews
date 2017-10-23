@@ -1,5 +1,10 @@
 $(document).ready(function(){
 
+  // Activates Selectric
+
+  $('select').selectric();
+
+  // Display loading icon on ajax request
   $('.loading').hide();
   $(document).ajaxStart(function(){
     $('.loading').show();
@@ -8,6 +13,7 @@ $(document).ready(function(){
     $('.loading').hide();
   });
 
+  // Adjusting the header for when the stories show and creating variable for each article
 
   $('#select-article').on('change', function(){
 
@@ -22,7 +28,8 @@ $(document).ready(function(){
       'api-key': "d182746a0d6f48f4b1247f6ea849fe15"
     });
 
-  
+    // Ajax request
+
     $.ajax({
       url: url,
       method: 'GET',
@@ -30,20 +37,29 @@ $(document).ready(function(){
       // var result = data.results;
       $('.stories').empty();
 
-    
+      // Looping and filtering the results
+
       $.each(data.results.filter(function(item){
         return item.multimedia.length !== 0 }).splice(0, 12),
         function(key, value){
           
         var title = value.abstract;
-        var photo = value.multimedia[4].url;
+        var photo = value.multimedia[value.multimedia.length - 1].url;
         var storyUrl = value.url;
 
+        // Appending to the dom
+
         $('.stories').append('<a href="' + storyUrl + '" class="card" style="background-image: url(' + photo + ');">' + '<div class="words">' + title + '</div  </a>');
+        $('.card').on('mouseover', function(){
+          $(this).children().css('visibility', 'visible');
+        })
+        $('.card').on('mouseleave', function(){
+          $(this).children().css('visibility', 'hidden');
+        })
       });
     
-      }).fail(function(err) {
-      throw err;
+      }).fail(function() {
+       $('.stories').append('<p>' +  'Sorry, there\'s been an error' +  '</p>');
     });
 
   });
@@ -51,32 +67,3 @@ $(document).ready(function(){
 });
 
 
-
-
-// var section = [
-//   'home',
-//   'opinion',
-//   'world',
-//   'national',
-//   'politics',
-//   'upshot',
-//   'nyregion',
-//   'business',
-//   'science',
-//   'health',
-//   'sports',
-//   'arts',
-//   'books',
-//   'movies',
-//   'theater',
-//   'sundayreview',
-//   'fashion',
-//   'tmagazine',
-//   'food',
-//   'travel',
-//   'magazine',
-//   'realestate',
-//   'automobiles',
-//   'obituaries',
-//   'insider'
-// ];

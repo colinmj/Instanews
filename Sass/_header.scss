@@ -6,6 +6,7 @@
   width: 100%;
   height: auto;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
   padding-top: 0px;
   padding-bottom: 0;
@@ -37,6 +38,7 @@
     font-size: 12px;
       @include tablet {
         width: 150px;
+        font-size: 16px;
       }
     }
     
@@ -55,74 +57,86 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    padding-bottom: 0;
+    width: 130px;
      @include tablet {
-      padding-right: 100px; 
-      padding-bottom: 45px;
-     }
+       width: 165px;
+     
+      }
      @include desktop {
       padding-left: 40px;
       padding-bottom: 50px;
+      width: 190px;
      }
    }
    .options {
     display: flex;
-    width: 110px;
+    width: 50px;
+    height: 25px;
+    padding-bottom: 20px;
     align-self: center;
+    font-size: 16px;
    }
-}
+ }
 
 // On change event
 
 .smaller {
-    max-height: 250px;
+    height: auto;
     margin: 0;
-    padding: 0 0 100px 0;
+    padding: 0 0 20px 0;
      @include tablet {
-      max-height: 130px;
-      margin: 0;
-      padding: 0 0 40px 80px;
+     
+      padding: 0 0 0 80px;
       justify-content: flex-start;
      }
      @include desktop {
-      max-height: 120px;
+      height: auto;
       padding: 0;
       margin: 0;
      }
 
    img {
       align-self: center;
-      width: 200px;
-      height: 200px;
-      padding-bottom: 20px;
-      padding-top: 35px;
+      width: 180px;
+      height: 180px;
+      padding-bottom: 0px;
+      padding-top: 20px;
        @include tablet {
         height: 120px;
         width: 120px;
         padding-right: 40px;
-        margin-top: 16px;
+        margin-bottom: 12px;
        }
        @include desktop {
-        height: 120px;
-        width: 120px;
-        margin-bottom: 40px;
-        margin-left: 20px;
+        height: 110px;
+        width: 110px;
+        // margin-bottom: 40px;
+        margin-left: 30px;
+        margin-bottom: 20px;
        }
      }
 
     .choose {
+
+       padding-top: 0;
+       margin-top: 0;
+       padding-bottom: 20px;
        @include tablet {
-         padding-top: 50px;
+         padding: 0 0 20px 0;
+         
        }
        @include desktop {
-        margin-bottom: 40px;
-        padding-left: 20px;
+       padding-left: 20px;
+       padding-bottom: 30px;
        }
      }
 
     .options {
-      height: 70px;
+      height: 25px;
        @include tablet {
-        height: 20px;
+       
+        padding-bottom: 20px;
        }
     }
   }

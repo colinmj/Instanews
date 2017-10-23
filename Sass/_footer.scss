@@ -3,7 +3,7 @@
 
 .foot {
   display: flex;
-  color: white;
+  color: #c2c2c2;
   flex-direction: column;
   align-content: flex-end;
   margin-top: 195px;
@@ -14,6 +14,7 @@
   }
   @include desktop {
     text-align: left;
+    padding-left: 20px;
   }
   .caps {
     text-transform: uppercase;
