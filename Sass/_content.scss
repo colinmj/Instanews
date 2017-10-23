@@ -1,0 +1,44 @@
+.stories {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  margin:0;
+  padding: 0;
+   @include tablet {
+     flex-flow: row wrap;
+   }
+
+
+  .card {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    /* border: 1px solid white; */
+    padding: 0;
+    margin: 0;
+    color: white;
+    text-decoration: none;
+    background-size: cover;
+    background-position: center;
+     @include tablet {
+       flex-basis: 50%;
+     }
+     @include desktop {
+       flex-basis : 25%;
+     }
+  
+     .card :first-of-type {
+       padding-top: 5px;
+     }
+   }
+
+
+
+    .words {
+    background-color: rgba(0, 0, 0, 0.5);
+   }
+  }

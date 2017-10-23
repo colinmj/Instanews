@@ -1,17 +1,27 @@
 $(document).ready(function(){
 
+  $('.loading').hide();
+  $(document).ajaxStart(function(){
+    $('.loading').show();
+  });
+  $(document).ajaxComplete(function(){
+    $('.loading').hide();
+  });
+
 
   $('#select-article').on('change', function(){
+
+
+    $('.logo').addClass('smaller');
+    $('.foot').addClass('small-foot');
     
     var selectedArticles =  $(this).val(); // Accesses what is selected from dropdown menu
     
-   
-
-
     var url = 'https://api.nytimes.com/svc/topstories/v2/' + selectedArticles + '.json';
     url += '?' + $.param({
       'api-key': "d182746a0d6f48f4b1247f6ea849fe15"
     });
+
   
     $.ajax({
       url: url,
@@ -30,16 +40,9 @@ $(document).ready(function(){
         var storyUrl = value.url;
 
         $('.stories').append('<a href="' + storyUrl + '" class="card" style="background-image: url(' + photo + ');">' + '<div class="words">' + title + '</div  </a>');
-           
-        
-        
       });
-
     
-        
-        
-
-  }).fail(function(err) {
+      }).fail(function(err) {
       throw err;
     });
 
