@@ -42,8 +42,7 @@ table {
   border-spacing: 0; }
 
 body {
-  font-family: "Open Sans", sans-serif, sans-serif;
-  font-weight: lighter; }
+  font-family: "Open Sans", sans-serif, sans-serif; }
 
 * {
   -webkit-box-sizing: border-box;
@@ -234,6 +233,8 @@ body {
       -webkit-box-direction: normal;
           -ms-flex-flow: row wrap;
               flex-flow: row wrap; } }
+  .stories p {
+    color: #ffffff; }
   .stories .card {
     display: -webkit-box;
     display: -ms-flexbox;

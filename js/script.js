@@ -59,7 +59,9 @@ $(document).ready(function(){
       });
     
       }).fail(function() {
-       $('.stories').append('<p>' +  'Sorry, there\'s been an error' +  '</p>');
+       $('.stories').prepend('<p> Sorry, there\'s been an error </p>');
+       alert('No Dice');
+       $('.card').css('visibility', 'hidden');
     });
 
   });
