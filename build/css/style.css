@@ -227,7 +227,9 @@ body {
           flex-direction: column;
   width: 100%;
   height: auto;
-  margin: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 0; }
   @media all and (min-width: 600px) {
     .stories {
@@ -236,7 +238,11 @@ body {
           -ms-flex-flow: row wrap;
               flex-flow: row wrap; } }
   .stories p {
-    color: #ffffff; }
+    color: #ffffff;
+    text-align: center;
+    font-style: italic; }
+  .stories .loading {
+    padding: 50px auto; }
   .stories .card {
     display: -webkit-box;
     display: -ms-flexbox;

@@ -59,6 +59,7 @@ $(document).ready(function(){
       });
     
       }).fail(function() {
+       $('.stories').empty();
        $('.stories').prepend('<p> Sorry, there\'s been an error </p>');
        alert('No Dice');
        $('.card').css('visibility', 'hidden');
