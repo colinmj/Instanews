@@ -6,7 +6,9 @@ var eslint = require('gulp-eslint');
 var sass = require('gulp-sass'),
 autoprefixer = require('gulp-autoprefixer'),
 cssnano = require('gulp-cssnano'),
-prettyError = require('gulp-prettyerror');
+prettyError = require('gulp-prettyerror'),
+babel = require('gulp-babel');
+
 
 gulp.task('sass', function(){
   gulp.src('./sass/style.scss')
@@ -21,8 +23,17 @@ gulp.task('sass', function(){
   .pipe(gulp.dest('./build/css'));
  });
 
+ const input = './js/*.js';
+ const output = './js/transpiled';
 
-gulp.task('scripts', ['lint'], function() {
+ gulp.task('babel', function(){
+   return gulp.src(input)
+   .pipe(babel())
+   .pipe(gulp.dest(output));
+ });
+
+
+gulp.task('scripts', ['babel', 'lint'], function() {
   gulp.src('./js/*.js')
     .pipe(uglify())
     .pipe(rename({ extname: '.min.js'}))
