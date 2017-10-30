@@ -8,9 +8,11 @@ $(document).ready(function(){
   $('.loading').hide();
   $(document).ajaxStart(function(){
     $('.loading').show();
+    $('.foot').hide();
   });
   $(document).ajaxComplete(function(){
     $('.loading').hide();
+    $('.foot').show();
   });
 
   // Adjusting the header for when the stories show and creating variable for each article
@@ -43,9 +45,9 @@ $(document).ready(function(){
         return item.multimedia.length !== 0 }).splice(0, 12),
         function(key, value){
           
-        var title = value.abstract;
-        var photo = value.multimedia[value.multimedia.length - 1].url;
-        var storyUrl = value.url;
+        let title = value.abstract;
+        let photo = value.multimedia[value.multimedia.length - 1].url;
+        let storyUrl = value.url;
 
         // Appending to the dom
 
