@@ -24,7 +24,7 @@ gulp.task('sass', function(){
  });
 
  const input = './js/*.js';
- const output = '.js/transpiled';
+ const output = './js/transpiled';
 
  gulp.task('babel', function(){
    return gulp.src(input)
