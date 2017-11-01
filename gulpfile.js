@@ -20,7 +20,7 @@ gulp.task('sass', function(){
   .pipe(gulp.dest('build/css'))
   .pipe(cssnano())
   .pipe(rename('style.min.css'))
-  .pipe(gulp.dest('./build/css'));
+  .pipe(gulp.dest('./build/css'))
  });
 
  const input = './js/*.js';
@@ -33,8 +33,8 @@ gulp.task('sass', function(){
  });
 
 
-gulp.task('scripts', ['babel', 'lint'], function() {
-  gulp.src('./js/*.js')
+gulp.task('scripts', ['lint', 'babel'], function() {
+  gulp.src(output + '/*.js')
     .pipe(uglify())
     .pipe(rename({ extname: '.min.js'}))
     .pipe(gulp.dest('./build/js'))

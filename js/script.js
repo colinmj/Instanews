@@ -1,16 +1,16 @@
 $(document).ready(function(){
-
+  
   // Activates Selectric
 
   $('select').selectric();
 
   // Display loading icon on ajax request
   $('.loading').hide();
-  $(document).ajaxStart(function(){
+  $(document).ajaxStart(() => {
     $('.loading').show();
     $('.foot').hide();
   });
-  $(document).ajaxComplete(function(){
+  $(document).ajaxComplete(() => {
     $('.loading').hide();
     $('.foot').show();
   });
@@ -23,9 +23,9 @@ $(document).ready(function(){
     $('.logo').addClass('smaller');
     $('.foot').addClass('small-foot');
     
-    var selectedArticles =  $(this).val(); // Accesses what is selected from dropdown menu
+    let selectedArticles =  $(this).val(); // Accesses what is selected from dropdown menu
     
-    var url = 'https://api.nytimes.com/svc/topstories/v2/' + selectedArticles + '.json';
+    let url = 'https://api.nytimes.com/svc/topstories/v2/' + selectedArticles + '.json';
     url += '?' + $.param({
       'api-key': "d182746a0d6f48f4b1247f6ea849fe15"
     });
@@ -35,13 +35,13 @@ $(document).ready(function(){
     $.ajax({
       url: url,
       method: 'GET',
-    }).done(function(data) {
+    }).done((data) => {
       // var result = data.results;
       $('.stories').empty();
 
       // Looping and filtering the results
 
-      $.each(data.results.filter(function(item){
+      $.each(data.results.filter((item) => {
         return item.multimedia.length !== 0 }).splice(0, 12),
         function(key, value){
           
@@ -51,7 +51,7 @@ $(document).ready(function(){
 
         // Appending to the dom
 
-        $('.stories').append('<a href="' + storyUrl + '" class="card" style="background-image: url(' + photo + ');">' + '<div class="words">' + title + '</div  </a>');
+        $('.stories').append(`<a href="${storyUrl}" class="card style="background-image: url('${photo}');"> <div class="words"> ${title} </div> </a>`);
         $('.card').on('mouseover', function(){
           $(this).children().css('visibility', 'visible');
         })
